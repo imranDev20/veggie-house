@@ -12,7 +12,7 @@ const Inventory = ({ isHome }) => {
     <section className="w-full bg-neutral-50 py-10">
       <div className="container mx-auto px-20 ">
         <div className="flex justify-center items-center">
-          <h2 className=" text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[100%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-500/50">
+          <h2 className=" text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[100%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50">
             Intentory Items
           </h2>
         </div>

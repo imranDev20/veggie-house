@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body{
-  @apply font-['Nunito_Sans'] 
+  @apply font-['Open_Sans'] 
 }

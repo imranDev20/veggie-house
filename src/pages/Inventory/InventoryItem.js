@@ -20,7 +20,7 @@ const InventoryItem = ({
           <h4 className="text-2xl my-2 font-semibold text-neutral-600 font-['Playfair_Display']">
             {name}
           </h4>
-          <p className="text-2xl  text-green-500">{price}/kg</p>
+          <p className="text-2xl font-medium  text-green-600">{price}/kg</p>
 
           <p className="text-neutral-500 my-3">{description}</p>
           <div className="flex justify-between my-2">
@@ -34,7 +34,7 @@ const InventoryItem = ({
         </div>
         <Link
           to={`/inventory/${id}`}
-          className="bg-green-500/20 text-green-500 hover:bg-green-500 hover:text-white transition-colors inline-block text-center mt-5 rounded py-2 font-semibold"
+          className="bg-green-600/20 text-green-600 hover:bg-green-600 hover:text-white transition-colors inline-block text-center mt-5 rounded py-2 font-semibold"
         >
           Update
         </Link>

@@ -7,10 +7,12 @@ import Login from "./pages/Login/Login";
 import Footer from "./pages/Shared/Footer";
 import ItemDetails from "./pages/Inventory/ItemDetails";
 import SignUp from "./pages/SignUp/SignUp";
+import ScrollToTop from "./hooks/scrollToTop";
 
 function App() {
   return (
     <div className="App">
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

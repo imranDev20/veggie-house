@@ -11,7 +11,7 @@ const Hero = () => {
             Fresh & <br />
             Organic
           </h1>
-          <p className="my-5 text-xl text-neutral-500">
+          <p className="my-5 text-xl text-neutral-500 leading-9">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
             delectus corporis ex nihil nostrum! Repellendus at accusamus sequi
             necessitatibus officia!

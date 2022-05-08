@@ -63,7 +63,7 @@ const SignUp = () => {
         />
         <p
           className={`${
-            isValidEmail ? `text-green-500` : `text-red-500`
+            isValidEmail ? `text-green-600` : `text-red-500`
           } text-sm ml-5 `}
         >
           {emailMessage}
@@ -85,7 +85,7 @@ const SignUp = () => {
         />
         <p
           className={`${
-            isValidPassword ? `text-green-500` : `text-red-500`
+            isValidPassword ? `text-green-600` : `text-red-500`
           } text-sm ml-5 `}
         >
           {passwordMessage}
@@ -93,7 +93,7 @@ const SignUp = () => {
 
         <button
           onClick={handleCreateUser}
-          className="bg-green-500 text-white font-medium hover:bg-green-600 transition cursor-pointer px-5 rounded-full py-2  my-2 flex items-center justify-center"
+          className="bg-green-600 text-white font-medium hover:bg-green-600 transition cursor-pointer px-5 rounded-full py-2  my-2 flex items-center justify-center"
         >
           Sign Up
           {loading && (
@@ -113,7 +113,7 @@ const SignUp = () => {
         {/*  */}
         <GoogleSignInButton isSignUp>Sign Up With Google</GoogleSignInButton>
         <Link
-          className="text-center text-sm mt-3 text-neutral-500 hover:text-green-500 "
+          className="text-center text-sm mt-3 text-neutral-500 hover:text-green-600 "
           to="/login"
         >
           Already a member? Login instead.
