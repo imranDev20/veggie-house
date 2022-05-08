@@ -113,7 +113,7 @@ const SignUp = () => {
         {/*  */}
         <GoogleSignInButton isSignUp>Sign Up With Google</GoogleSignInButton>
         <Link
-          className="text-center text-sm mt-3 text-neutral-500 hover:text-cyan-400 "
+          className="text-center text-sm mt-3 text-neutral-500 hover:text-green-500 "
           to="/login"
         >
           Already a member? Login instead.
