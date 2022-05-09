@@ -1,0 +1,50 @@
+import React, { useEffect, useState } from "react";
+import app from "../../firebase";
+import { getAuth } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import MyItem from "./MyItem";
+import Skeleton from "../Shared/Skeleton";
+const auth = getAuth(app);
+
+const MyItems = () => {
+  const [myItems, setMyItems] = useState([]);
+  const [user, loading, error] = useAuthState(auth);
+
+  const email = user?.email;
+  useEffect(() => {
+    const url = `${process.env.REACT_APP_SERVER_URL}/inventory?email=${email}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setMyItems(data));
+
+    console.log(url);
+  }, [myItems, email]);
+
+  return (
+    <main className="container mx-auto px-20 my-10">
+      <div className="max-w-xs mx-auto">
+        <h2 className="mb-16 mt-10 text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[100%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50">
+          My Items
+        </h2>
+      </div>
+      <div className="mt-20 mb-10 grid grid-cols-3 gap-10">
+        {myItems?.length !== 0
+          ? myItems.map((item) => (
+              <MyItem
+                key={item?._id}
+                id={item?._id}
+                image={item?.image}
+                name={item?.name}
+                price={item?.price}
+                description={item?.description}
+                supplier={item?.supplier}
+                quantity={item?.quantity}
+              />
+            ))
+          : [1, 2, 3, 4, 5, 6].map((n) => <Skeleton key={n} />)}
+      </div>
+    </main>
+  );
+};
+
+export default MyItems;

@@ -14,6 +14,7 @@ import NotFound from "./pages/404/NotFound";
 import AddNewItem from "./pages/AddNewItem/AddNewItem";
 import RequireAuth from "./pages/RequireAuth/RequireAuth";
 import Blog from "./pages/Blog/Blog";
+import MyItems from "./pages/MyItems/MyItems";
 
 function App() {
   return (
@@ -34,7 +35,15 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/inventory/add-new-item" element={<AddNewItem />} />
+        <Route path="/my-items" element={<MyItems />} />
+        <Route
+          path="/inventory/add-new-item"
+          element={
+            <RequireAuth>
+              <AddNewItem />
+            </RequireAuth>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer position="bottom-right" />

@@ -1,8 +1,8 @@
 import React from "react";
 
-const InventorySkeleton = () => {
+const Skeleton = () => {
   return (
-    <div className="shadow-lg rounded-lg min-h-[656px]">
+    <div className="shadow-lg rounded-lg min-h-[656px] overflow-hidden">
       {/* image */}
       <div className="w-full h-72 bg-neutral-200"></div>
       <div className="p-7 flex-1 flex flex-col justify-between">
@@ -27,4 +27,4 @@ const InventorySkeleton = () => {
   );
 };
 
-export default InventorySkeleton;
+export default Skeleton;

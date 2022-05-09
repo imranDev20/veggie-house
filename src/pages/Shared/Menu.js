@@ -48,13 +48,13 @@ const Menu = () => {
             <div className="flex flex-col items-start justify-start w-full">
               <Link
                 className="text-neutral-500 block w-full hover:bg-neutral-100 py-2 px-3"
-                to="/manage-items"
+                to="/inventory"
               >
                 Manage Items
               </Link>
               <Link
                 className=" text-neutral-500 block w-full hover:bg-neutral-100 py-2 px-3"
-                to="/add-item"
+                to="/inventory/add-new-item"
               >
                 Add Item
               </Link>

@@ -36,15 +36,15 @@ const AddNewItem = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log("success", data);
-        alert("users added successfully");
+        alert("Item added successfully");
         event.target.reset();
       })
       .catch((error) => console.log("Error:", error));
   };
   return (
     <div className=" max-w-sm mx-auto">
-      <h2 className="mb-16 mt-10 text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[100%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50">
-        Intentory Items
+      <h2 className=" text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[80%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50 mb-20 mt-10">
+        Add new item
       </h2>
       <form
         onSubmit={handleAddItem}

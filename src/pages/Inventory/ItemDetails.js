@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 const ItemDetails = () => {
   const { itemId } = useParams();
@@ -72,7 +73,9 @@ const ItemDetails = () => {
           </div>
         </>
       ) : (
-        <p>Loading........</p>
+        <div className="flex justify-center items-center h-96">
+          <ScaleLoader color={"#16a34a"} loading={item._id} size={60} />
+        </div>
       )}
     </main>
   );
