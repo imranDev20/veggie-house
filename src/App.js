@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 import NotFound from "./pages/404/NotFound";
 import AddNewItem from "./pages/AddNewItem/AddNewItem";
 import RequireAuth from "./pages/RequireAuth/RequireAuth";
+import Blog from "./pages/Blog/Blog";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/inventory/add-new-item" element={<AddNewItem />} />
         <Route path="*" element={<NotFound />} />

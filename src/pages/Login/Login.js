@@ -46,7 +46,7 @@ const Login = () => {
       <div className="max-w-sm mx-auto flex flex-col shadow-lg border rounded-lg py-7 px-5">
         <h2 className="text-center text-4xl text-neutral-700 mb-3">Login</h2>
         <input
-          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-cyan-400 rounded-full py-2 my-3"
+          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-orange-500 rounded py-2 my-3"
           type="email"
           required
           onChange={(e) => handleEmailChange(e)}
@@ -61,7 +61,7 @@ const Login = () => {
         </p>
 
         <input
-          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-cyan-400 rounded-full py-2  my-3"
+          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-orange-500 rounded py-2  my-3"
           type="password"
           required
           onChange={(e) => setPassword(e.target.value)}
@@ -79,7 +79,7 @@ const Login = () => {
                 toast("Empty email. Please provide an email");
               }
             }}
-            className="hover:text-cyan-400"
+            className="hover:text-green-600"
           >
             Send reset link.
           </button>
@@ -87,7 +87,7 @@ const Login = () => {
 
         <button
           onClick={handleSignIn}
-          className="bg-cyan-400 text-white font-medium hover:bg-cyan-500 transition cursor-pointer px-5 rounded-full py-2  my-2 flex items-center justify-center"
+          className="bg-green-600/30 text-green-600 font-medium hover:bg-green-600 hover:text-white transition cursor-pointer px-5 rounded py-2  my-2 flex items-center justify-center"
         >
           Login
           {signInloading && (
@@ -108,7 +108,7 @@ const Login = () => {
         {/* Google Sign in component */}
         <GoogleSignInButton isLogin>Login With Google</GoogleSignInButton>
         <Link
-          className="text-center text-sm mt-3 text-neutral-500 hover:text-cyan-400"
+          className="text-center text-sm mt-3 text-neutral-500 hover:text-green-600"
           to="/signup"
         >
           Don't have and account? Sign up instead.

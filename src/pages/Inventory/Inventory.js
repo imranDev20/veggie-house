@@ -56,7 +56,7 @@ const Inventory = ({ isHome }) => {
                   description={item.description}
                 />
               ))
-            : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+            : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((n) => (
                 <InventorySkeleton key={n} />
               ))}
         </div>

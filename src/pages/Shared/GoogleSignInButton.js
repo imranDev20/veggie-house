@@ -28,7 +28,7 @@ const GoogleSignInButton = ({ children, isSignUp, isLogin }) => {
               : navigate(from, { replace: true })
           );
         }}
-        className="bg-orange-500 text-white font-semibold hover:bg-orange-600 hover:text-white transition cursor-pointer px-5 rounded-full py-2  my-2 flex items-center justify-center"
+        className="bg-orange-500/30 text-orange-500 font-semibold hover:bg-orange-600 hover:text-white transition cursor-pointer px-5 rounded py-2  my-2 flex items-center justify-center"
       >
         <FaGoogle className="mr-2" />
         {children}

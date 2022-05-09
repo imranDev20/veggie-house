@@ -18,9 +18,9 @@ const AddNewItem = () => {
     const quantity = event.target.quantity.value;
     const supplier = event.target.supplier.value;
     const description = event.target.description.value;
-    // const email =
+    const email = user?.email;
 
-    const item = { name, image, price, quantity, supplier, description };
+    const item = { name, image, price, quantity, supplier, description, email };
 
     const url = `${process.env.REACT_APP_SERVER_URL}/inventory`;
     console.log(url);
@@ -42,25 +42,64 @@ const AddNewItem = () => {
       .catch((error) => console.log("Error:", error));
   };
   return (
-    <div className="bg-red-100 max-w-sm mx-auto">
+    <div className=" max-w-sm mx-auto">
+      <h2 className="mb-16 mt-10 text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[100%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50">
+        Intentory Items
+      </h2>
       <form
         onSubmit={handleAddItem}
         action=""
         className="flex flex-col justify-center items-center"
       >
-        <input type="text" name="name" placeholder="Name" />
-        <input type="text" name="image" placeholder="Paste your image URL" />
-        <input type="text" name="price" placeholder="Price" />
-        <input type="text" name="quantity" placeholder="Quantity" />
-        <input type="text" name="supplier" placeholder="Supplier name" id="" />
+        <div className="flex justify-between">
+          <input
+            className="my-1 py-2 px-4 rounded outline-none focus:ring-2 focus:ring-orange-500/30 w-[49%] bg-neutral-100"
+            type="text"
+            name="name"
+            placeholder="Name"
+          />
+          <input
+            className="my-1 py-2 px-4 rounded outline-none focus:ring-2 focus:ring-orange-500/30 w-[49%] bg-neutral-100"
+            type="text"
+            name="price"
+            placeholder="Price"
+          />
+        </div>
+
+        <input
+          className="my-1 py-2 px-4 rounded outline-none focus:ring-2 focus:ring-orange-500/30 w-full bg-neutral-100"
+          type="text"
+          name="image"
+          placeholder="Paste your image URL"
+        />
+        <div className="flex justify-between">
+          <input
+            className="my-1 py-2 px-4 rounded outline-none focus:ring-2 focus:ring-orange-500/30 w-[49%] bg-neutral-100"
+            type="text"
+            name="quantity"
+            placeholder="Quantity"
+          />
+          <input
+            className="my-1 py-2 px-4 rounded outline-none focus:ring-2 focus:ring-orange-500/30 w-[49%] bg-neutral-100"
+            type="text"
+            name="supplier"
+            placeholder="Supplier name"
+            id=""
+          />
+        </div>
         <textarea
           name="description"
+          className="my-1 py-2 px-4 rounded outline-none focus:ring-2 focus:ring-orange-500/30 w-full bg-neutral-100"
           id=""
-          cols="30"
-          rows="10"
+          cols="20"
+          rows="5"
           placeholder="Item description...."
         ></textarea>
-        <input type="submit" value="Add New Item" />
+        <input
+          className="bg-green-600/30 w-full my-3 py-2 text-green-600 rounded cursor-pointer hover:bg-green-600 hover:text-white transition-colors"
+          type="submit"
+          value="Add New Item"
+        />
       </form>
     </div>
   );

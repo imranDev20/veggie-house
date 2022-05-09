@@ -5,6 +5,7 @@ import { getAuth, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import AvatarDefault from "../../images/avatar-default.png";
+import CustomLink from "./CustomLink";
 
 const auth = getAuth(app);
 
@@ -14,23 +15,14 @@ const Menu = () => {
 
   return (
     <nav className="flex items-center">
-      <Link
-        className="mx-2 px-2 py-2 text-lg text-neutral-600 hover:text-orange-500 transition-colors font-medium"
-        to={`/`}
-      >
-        Home
-      </Link>
-      <Link
-        className="mx-2 px-2 py-2 text-lg text-neutral-600 hover:text-orange-500 transition-colors font-medium"
-        to={`/inventory`}
-      >
-        Inventory
-      </Link>
+      <CustomLink to="/">Home</CustomLink>
+      <CustomLink to="/inventory">Inventory</CustomLink>
+      <CustomLink to="/blog">Blog</CustomLink>
 
       {user && (
         <button
           onClick={() => setDropdown(!dropdown)}
-          className="w-10 h-10 mx-2 relative z-50"
+          className="w-10 h-10 ml-7 relative z-50"
         >
           <img
             className="h-full w-full object-contain"
@@ -72,7 +64,7 @@ const Menu = () => {
               >
                 My Items
               </Link>
-              <button
+              <div
                 className="text-neutral-500 block w-full hover:bg-neutral-100 py-2 px-3"
                 onClick={() => {
                   signOut(auth);
@@ -80,7 +72,7 @@ const Menu = () => {
                 }}
               >
                 Logout
-              </button>
+              </div>
             </div>
           </div>
         </button>
@@ -88,7 +80,7 @@ const Menu = () => {
 
       {!user && (
         <Link
-          className="px-4 py-2 rounded bg-green-600/20 text-green-600 font-medium transition inline-flex items-center hover:bg-green-600 hover:text-white"
+          className="px-4 py-2 ml-7 rounded bg-green-600/20 text-green-600 font-medium transition inline-flex items-center hover:bg-green-600 hover:text-white"
           to={`/login`}
         >
           Login

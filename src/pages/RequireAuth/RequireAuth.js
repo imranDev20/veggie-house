@@ -15,7 +15,7 @@ const RequireAuth = ({ children }) => {
   if (loading) {
     return (
       <div className="flex justify-center items-center">
-        <ScaleLoader color={"#22d3ee"} loading={loading} size={25} />
+        <ScaleLoader color={"#16a34a"} loading={loading} size={60} />
       </div>
     );
   }
