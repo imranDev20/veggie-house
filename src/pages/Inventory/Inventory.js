@@ -2,14 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useInventory from "../../hooks/useInventory";
 import InventoryItem from "./InventoryItem";
+import InventorySkeleton from "./InventorySkeleton";
 
 const Inventory = ({ isHome }) => {
   const { inventory } = useInventory();
-
   console.log(inventory);
-
   return (
-    <section className="w-full bg-neutral-50 py-10">
+    <section className="w-full bg-neutral-50 py-20">
       <div className="container mx-auto px-20 ">
         <div className="flex justify-center items-center">
           <h2 className=" text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[100%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50">
@@ -19,21 +18,24 @@ const Inventory = ({ isHome }) => {
 
         <div className="mt-20 mb-10 grid grid-cols-3 gap-10">
           {isHome
-            ? inventory
-                .slice(0, 6)
-                .map((item) => (
-                  <InventoryItem
-                    key={item._id}
-                    id={item._id}
-                    name={item.name}
-                    image={item.image}
-                    price={item.price}
-                    quantity={item.quantity}
-                    supplier={item.supplier}
-                    description={item.description}
-                  />
-                ))
-            : inventory.map((item) => (
+            ? inventory.length !== 0
+              ? inventory
+                  .slice(0, 6)
+                  .map((item) => (
+                    <InventoryItem
+                      key={item._id}
+                      id={item._id}
+                      name={item.name}
+                      image={item.image}
+                      price={item.price}
+                      quantity={item.quantity}
+                      supplier={item.supplier}
+                      description={item.description}
+                    />
+                  ))
+              : [0, 1, 2, 3, 4, 5].map((n) => <InventorySkeleton key={n} />)
+            : inventory.length !== 0
+            ? inventory.map((item) => (
                 <InventoryItem
                   key={item._id}
                   id={item._id}
@@ -44,6 +46,9 @@ const Inventory = ({ isHome }) => {
                   supplier={item.supplier}
                   description={item.description}
                 />
+              ))
+            : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+                <InventorySkeleton key={n} />
               ))}
         </div>
         {isHome && (

@@ -5,7 +5,7 @@ import Menu from "./Menu";
 const Header = () => {
   return (
     <header className="w-full bg-white py-5">
-      <div className="container mx-auto px-20 flex justify-between">
+      <div className="container mx-auto px-20 flex justify-between items-center">
         <Logo />
         <Menu />
       </div>

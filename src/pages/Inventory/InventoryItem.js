@@ -24,10 +24,10 @@ const InventoryItem = ({
 
           <p className="text-neutral-500 my-3">{description}</p>
           <div className="flex justify-between my-2">
-            <p className="text-sm font-semibold text-orange-500 rounded">
+            <p className="text-sm font-semibold text-orange-500">
               <span className="text-neutral-600">Available:</span> {quantity} kg
             </p>
-            <p className="text-sm text-orange-500 font-semibold rounded">
+            <p className="text-sm text-orange-500 font-semibold">
               <span className="text-neutral-600">Supplier:</span> {supplier}
             </p>
           </div>
