@@ -39,7 +39,7 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
 
-  // user && navigate("/");
+  user && navigate("/");
 
   return (
     <div className="container mx-auto px-10 my-10  ">

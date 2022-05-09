@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsTrash } from "react-icons/bs";
+import useInventory from "../../hooks/useInventory";
 
 const InventoryItem = ({
   id,
@@ -10,10 +12,36 @@ const InventoryItem = ({
   price,
   description,
 }) => {
+  const { inventory, setInventory } = useInventory();
+
+  const handleDeleteItem = () => {
+    const proceed = window.confirm("Are you sure you wnt to delete");
+    if (proceed) {
+      const url = `${process.env.REACT_APP_SERVER_URL}/inventory/${id}`;
+      console.log(url);
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            const remaining = inventory.filter((item) => item._id !== id);
+            setInventory(remaining);
+          }
+        });
+    }
+  };
+
   return (
     <div className="shadow-lg rounded-lg overflow-hidden bg-white flex flex-col">
-      <div className="w-full h-72">
+      <div className="w-full h-72 relative">
         <img className="w-full h-full object-cover" src={image} alt={name} />
+        <button
+          onClick={handleDeleteItem}
+          className="absolute top-5 right-5 text-2xl text-red-600"
+        >
+          <BsTrash />
+        </button>
       </div>
       <div className="p-7 flex-1 flex flex-col justify-between">
         <div>

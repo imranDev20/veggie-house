@@ -6,7 +6,7 @@ import InventorySkeleton from "./InventorySkeleton";
 
 const Inventory = ({ isHome }) => {
   const { inventory } = useInventory();
-  console.log(inventory);
+
   return (
     <section className="w-full bg-neutral-50 py-20">
       <div className="container mx-auto px-20 ">

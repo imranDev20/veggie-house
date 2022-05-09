@@ -4,15 +4,13 @@ import app from "../../firebase";
 import { getAuth, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import AvatarDefault from "../../images/avatar-default.png";
 
 const auth = getAuth(app);
 
 const Menu = () => {
   const [user, loading, error] = useAuthState(auth);
   const [dropdown, setDropdown] = useState(false);
-
-  console.log(user);
-  console.log(dropdown);
 
   return (
     <nav className="flex items-center">
@@ -36,7 +34,7 @@ const Menu = () => {
         >
           <img
             className="h-full w-full object-contain"
-            src={user?.photoURL}
+            src={user?.photoURL ? user?.photoURL : AvatarDefault}
             alt=""
           />
           <div
@@ -47,7 +45,7 @@ const Menu = () => {
             <div className="w-16 h-16">
               <img
                 className="h-full w-full object-contain"
-                src={user?.photoURL}
+                src={user?.photoURL ? user?.photoURL : AvatarDefault}
                 alt=""
               />
             </div>
