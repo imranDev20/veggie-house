@@ -30,7 +30,7 @@ const Menu = () => {
       {user && (
         <button
           onClick={() => setDropdown(!dropdown)}
-          className="w-10 h-10 mx-2 relative"
+          className="w-10 h-10 mx-2 relative z-50"
         >
           <img
             className="h-full w-full object-contain"

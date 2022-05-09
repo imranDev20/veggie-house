@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useInventory from "../../hooks/useInventory";
 import InventoryItem from "./InventoryItem";
 import InventorySkeleton from "./InventorySkeleton";
+import { BsPlusLg } from "react-icons/bs";
 
 const Inventory = ({ isHome }) => {
   const { inventory } = useInventory();
@@ -10,10 +11,18 @@ const Inventory = ({ isHome }) => {
   return (
     <section className="w-full bg-neutral-50 py-20">
       <div className="container mx-auto px-20 ">
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center relative">
           <h2 className=" text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[100%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50">
             Intentory Items
           </h2>
+          {!isHome && (
+            <Link
+              className="py-3 px-4 bg-orange-500/20 text-orange-500 font-semibold rounded absolute right-0 hover:bg-orange-500 hover:text-white transition-colors flex items-center"
+              to={`/inventory/add-new-item`}
+            >
+              Add New Item <BsPlusLg className="ml-2" />
+            </Link>
+          )}
         </div>
 
         <div className="mt-20 mb-10 grid grid-cols-3 gap-10">
