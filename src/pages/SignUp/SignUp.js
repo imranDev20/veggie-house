@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  useCreateUserWithEmailAndPassword,
-  useUpdateProfile,
-} from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import app from "../../firebase";
 import { getAuth } from "firebase/auth";
 import GoogleSignInButton from "../Shared/GoogleSignInButton";
@@ -13,7 +10,7 @@ import useLoadingAnimation from "../../hooks/useLoadingAnimation";
 
 const auth = getAuth(app);
 
-const SignUp = () => {
+const Signup = () => {
   // Hooks
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -55,7 +52,7 @@ const SignUp = () => {
         <h2 className="text-center text-4xl text-neutral-700 mb-3">Sign Up</h2>
 
         <input
-          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-orange-500 rounded-full py-2 my-3"
+          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-cyan-400 rounded-full py-2 my-3"
           type="email"
           required
           onChange={(e) => handleEmailChange(e)}
@@ -63,21 +60,21 @@ const SignUp = () => {
         />
         <p
           className={`${
-            isValidEmail ? `text-green-600` : `text-red-500`
+            isValidEmail ? `text-green-500` : `text-red-500`
           } text-sm ml-5 `}
         >
           {emailMessage}
         </p>
 
         <input
-          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-orange-500 rounded-full py-2  my-3"
+          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-cyan-400 rounded-full py-2  my-3"
           type="password"
           required
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
         <input
-          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-orange-500 rounded-full py-2  my-3"
+          className="bg-neutral-100 px-5 outline-none focus:ring-2 focus:ring-cyan-400 rounded-full py-2  my-3"
           type="password"
           required
           onChange={(e) => handleConfirmPassword(e)}
@@ -85,7 +82,7 @@ const SignUp = () => {
         />
         <p
           className={`${
-            isValidPassword ? `text-green-600` : `text-red-500`
+            isValidPassword ? `text-green-500` : `text-red-500`
           } text-sm ml-5 `}
         >
           {passwordMessage}
@@ -93,7 +90,7 @@ const SignUp = () => {
 
         <button
           onClick={handleCreateUser}
-          className="bg-green-600 text-white font-medium hover:bg-green-600 transition cursor-pointer px-5 rounded-full py-2  my-2 flex items-center justify-center"
+          className="bg-cyan-400 text-white font-medium hover:bg-cyan-500 transition cursor-pointer px-5 rounded-full py-2  my-2 flex items-center justify-center"
         >
           Sign Up
           {loading && (
@@ -113,7 +110,7 @@ const SignUp = () => {
         {/*  */}
         <GoogleSignInButton isSignUp>Sign Up With Google</GoogleSignInButton>
         <Link
-          className="text-center text-sm mt-3 text-neutral-500 hover:text-green-600 "
+          className="text-center text-sm mt-3 text-neutral-500 hover:text-cyan-400 "
           to="/login"
         >
           Already a member? Login instead.
@@ -123,4 +120,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;

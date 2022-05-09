@@ -4,9 +4,9 @@ const useFromRedirect = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const from = location?.state?.from?.pathname;
+  const from = location?.state?.from?.pathname || "/";
 
-  return { from, navigate };
+  return { location, from, navigate };
 };
 
 export default useFromRedirect;
