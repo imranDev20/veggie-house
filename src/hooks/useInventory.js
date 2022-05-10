@@ -7,7 +7,7 @@ const useInventory = () => {
     fetch(`${process.env.REACT_APP_SERVER_URL}/inventory`)
       .then((res) => res.json())
       .then((data) => setInventory(data));
-  }, [inventory]);
+  }, []);
 
   return { inventory, setInventory };
 };

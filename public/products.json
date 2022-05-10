@@ -5,7 +5,8 @@
     "price": "৳20",
     "description": "Cucumber is a widely-cultivated creeping vine plant in the Cucurbitaceae family that bears usually cylindrical fruits, which are used as vegetables",
     "supplier": "Cherag Ali",
-    "quantity": 300
+    "quantity": 300,
+    "email": "imrandev20@gmail.com"
   },
   {
     "name": "Snake Gourd",
@@ -13,7 +14,8 @@
     "price": "৳50",
     "description": "Trichosanthes cucumerina is a tropical or subtropical vine. Its variety T. cucumerina var. anguina raised for its strikingly long fruit. In Asia",
     "supplier": "Lal Mia",
-    "quantity": 286
+    "quantity": 286,
+    "email": "imrandev20@gmail.com"
   },
   {
     "name": "Spinach",
@@ -21,7 +23,8 @@
     "price": "৳15",
     "description": "Spinach is a leafy green flowering plant native to central and western Asia.",
     "supplier": "Ashraf Mia",
-    "quantity": 1000
+    "quantity": 1000,
+    "email": "imrandev20@gmail.com"
   },
   {
     "name": "Green Peas",
@@ -29,7 +32,8 @@
     "price": "৳25",
     "description": "The pea is most commonly the small spherical seed or the seed-pod of the pod fruit Pisum sativum",
     "supplier": "Kuddus Ali",
-    "quantity": 2000
+    "quantity": 2000,
+    "email": "imrandev20@gmail.com"
   },
   {
     "name": "Bitter Melon",
@@ -37,7 +41,8 @@
     "price": "৳75",
     "description": "Momordica charantia is a tropical and subtropical vine of the family Cucurbitaceae, widely grown in Asia.",
     "supplier": "Shona Mia",
-    "quantity": 400
+    "quantity": 400,
+    "email": "imrandev20@gmail.com"
   },
   {
     "name": "Guineo",
@@ -45,7 +50,8 @@
     "price": "৳125",
     "description": "Guineos usually refers to an unripe banana. The term guineo is sometimes used in reference to its ripened counterpart: the yellow (ripened) banana.",
     "supplier": "Gedu Mia",
-    "quantity": 640
+    "quantity": 640,
+    "email": "imrandev20@gmail.com"
   },
   {
     "name": "Yardlong Bean",
@@ -53,7 +59,8 @@
     "price": "৳80",
     "description": "The asparagus bean is a legume cultivated for its edible green pods containing immature seeds, like the green bean.",
     "supplier": "Keramot",
-    "quantity": 514
+    "quantity": 514,
+    "email": "imrandev20@gmail.com"
   },
   {
     "name": "Green Chilli",
@@ -61,7 +68,8 @@
     "price": "৳5",
     "description": "Chili peppers from Nahuatl chīlli are varieties of the berry-fruit of plants from the genus Capsicum, which are members of the nightshade family Solanaceae",
     "supplier": "Salam Bhuiyan",
-    "quantity": 735
+    "quantity": 735,
+    "email": "imrandev20@gmail.com"
   },
   {
     "name": "Red Spinach",
@@ -69,7 +77,8 @@
     "price": "৳38",
     "description": "Amaranthus dubius, the red spinach, Chinese spinach, spleen amaranth, hon-toi-moi, yin choy, hsien tsai, or Arai keerai is a plant species.",
     "supplier": "Hakim Munshi",
-    "quantity": 1500
+    "quantity": 1500,
+    "email": "imrandev20@gmail.com"
   },
   {
     "name": "Carrots",
@@ -77,7 +86,8 @@
     "price": "৳110",
     "description": "The carrot is a root vegetable, typically orange in color, though purple, black, red, white, and yellow cultivars exist",
     "supplier": "Latif Siddique",
-    "quantity": 30
+    "quantity": 30,
+    "email": "imrandev20@gmail.com"
   },
   {
     "name": "Brussels Sprouts",
@@ -85,6 +95,7 @@
     "price": "৳78",
     "description": "The Brussels sprout is a member of the Gemmifera cultivar group of cabbages, grown for its edible buds.",
     "supplier": "Kader Talukdar",
-    "quantity": 10
+    "quantity": 10,
+    "email": "imrandev20@gmail.com"
   }
 ]

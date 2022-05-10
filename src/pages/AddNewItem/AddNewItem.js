@@ -2,11 +2,13 @@ import React from "react";
 import app from "../../firebase";
 import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
+import useInventory from "../../hooks/useInventory";
 
 const auth = getAuth(app);
 
 const AddNewItem = () => {
   const [user, loading, error] = useAuthState(auth);
+  const { inventory, setInventory } = useInventory();
 
   console.log(user);
 
@@ -38,6 +40,8 @@ const AddNewItem = () => {
         console.log("success", data);
         alert("Item added successfully");
         event.target.reset();
+        const newInventory = [...inventory, item];
+        setInventory(newInventory);
       })
       .catch((error) => console.log("Error:", error));
   };

@@ -15,7 +15,7 @@ const ItemDetails = () => {
   }, []);
 
   return (
-    <main className="h-screen">
+    <main className="min-h-[600px]">
       {item._id ? (
         <>
           <div className="max-w-4xl mx-auto px-20 flex my-10">

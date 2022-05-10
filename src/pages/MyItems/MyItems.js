@@ -13,12 +13,11 @@ const MyItems = () => {
   const email = user?.email;
   useEffect(() => {
     const url = `${process.env.REACT_APP_SERVER_URL}/inventory?email=${email}`;
+    console.log(url);
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyItems(data));
-
-    console.log(url);
-  }, [myItems, email]);
+  }, [email]);
 
   return (
     <main className="container mx-auto px-20 my-10">
@@ -28,21 +27,24 @@ const MyItems = () => {
         </h2>
       </div>
       <div className="mt-20 mb-10 grid grid-cols-3 gap-10">
-        {myItems?.length !== 0
-          ? myItems.map((item) => (
-              <MyItem
-                key={item?._id}
-                id={item?._id}
-                image={item?.image}
-                name={item?.name}
-                price={item?.price}
-                description={item?.description}
-                supplier={item?.supplier}
-                quantity={item?.quantity}
-              />
-            ))
-          : [1, 2, 3, 4, 5, 6].map((n) => <Skeleton key={n} />)}
+        {myItems.map((item) => (
+          <MyItem
+            key={item?._id}
+            id={item?._id}
+            image={item?.image}
+            name={item?.name}
+            price={item?.price}
+            description={item?.description}
+            supplier={item?.supplier}
+            quantity={item?.quantity}
+          />
+        ))}
       </div>
+      {myItems?.length === 0 && (
+        <p className="text-center text-2xl text-neutral-600">
+          You have not added any items
+        </p>
+      )}
     </main>
   );
 };

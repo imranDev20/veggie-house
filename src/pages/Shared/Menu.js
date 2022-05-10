@@ -25,7 +25,7 @@ const Menu = () => {
           className="w-10 h-10 ml-7 relative z-50"
         >
           <img
-            className="h-full w-full object-contain"
+            className="h-full w-full object-contain overflow-hidden rounded-full"
             src={user?.photoURL ? user?.photoURL : AvatarDefault}
             alt=""
           />
@@ -34,7 +34,7 @@ const Menu = () => {
               dropdown ? `flex` : `hidden`
             } absolute top-12 shadow-lg bg-white left-1/2 -translate-x-1/2 rounded-lg w-52 flex-col items-center py-3 border`}
           >
-            <div className="w-16 h-16">
+            <div className="w-16 h-16 overflow-hidden rounded-full">
               <img
                 className="h-full w-full object-contain"
                 src={user?.photoURL ? user?.photoURL : AvatarDefault}
