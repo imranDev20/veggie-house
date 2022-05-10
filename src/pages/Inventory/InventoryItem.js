@@ -5,6 +5,7 @@ import useInventory from "../../hooks/useInventory";
 
 const InventoryItem = ({
   id,
+  isHome,
   name,
   image,
   quantity,
@@ -35,12 +36,14 @@ const InventoryItem = ({
     <div className="shadow-lg rounded-lg overflow-hidden bg-white flex flex-col">
       <div className="w-full h-72 relative">
         <img className="w-full h-full object-cover" src={image} alt={name} />
-        <button
-          onClick={() => handleDeleteItem()}
-          className="absolute top-5 right-5 text-2xl text-red-600"
-        >
-          <BsTrash />
-        </button>
+        {!isHome && (
+          <button
+            onClick={() => handleDeleteItem()}
+            className="absolute top-5 right-5 text-2xl text-red-600"
+          >
+            <BsTrash />
+          </button>
+        )}
       </div>
       <div className="p-7 flex-1 flex flex-col justify-between">
         <div>

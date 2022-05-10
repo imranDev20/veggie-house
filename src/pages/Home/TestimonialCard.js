@@ -2,7 +2,7 @@ import React from "react";
 
 const TestimonialCard = ({ name, email, text, image }) => {
   return (
-    <div className=" p-5 rounded-lg flex flex-col items-center">
+    <div className=" py-10 px-7 rounded-lg flex flex-col items-center bg-white shadow-lg">
       <p className="text-neutral-500 text-center">{text}</p>
 
       <div className="w-28 h-28 rounded-full overflow-hidden my-5">

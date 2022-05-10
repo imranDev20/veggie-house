@@ -32,6 +32,7 @@ const Inventory = ({ isHome }) => {
                   .slice(0, 6)
                   .map((item) => (
                     <InventoryItem
+                      isHome={isHome}
                       key={item?._id}
                       id={item?._id}
                       name={item?.name}

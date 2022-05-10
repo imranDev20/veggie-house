@@ -53,6 +53,7 @@ const ItemDetails = () => {
                 <input
                   className="bg-neutral-100 outline-none focus:ring-2 focus:ring-green-600/30 rounded-l px-3 py-2"
                   type="number"
+                  min={0}
                 />
                 <button className="bg-green-600/30 text-green-600 px-3 py-2 rounded-r font-semibold">
                   Restock

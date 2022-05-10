@@ -15,6 +15,7 @@ import AddNewItem from "./pages/AddNewItem/AddNewItem";
 import RequireAuth from "./pages/RequireAuth/RequireAuth";
 import Blog from "./pages/Blog/Blog";
 import MyItems from "./pages/MyItems/MyItems";
+import AddTestimonial from "./pages/AddTestimonial/AddTestimonial";
 
 function App() {
   return (
@@ -24,6 +25,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/inventory" element={<Inventory />} />
+        <Route
+          path="/add-testimonial"
+          element={
+            <RequireAuth>
+              <AddTestimonial />
+            </RequireAuth>
+          }
+        />
         <Route
           path="/inventory/:itemId"
           element={
