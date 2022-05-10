@@ -14,7 +14,7 @@ const Menu = () => {
   const [dropdown, setDropdown] = useState(false);
 
   return (
-    <nav className="flex items-center">
+    <nav className="hidden lg:flex items-center">
       <CustomLink to="/">Home</CustomLink>
       <CustomLink to="/inventory">Inventory</CustomLink>
       <CustomLink to="/blog">Blog</CustomLink>

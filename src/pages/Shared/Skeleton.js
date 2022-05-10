@@ -2,7 +2,7 @@ import React from "react";
 
 const Skeleton = () => {
   return (
-    <div className="shadow-lg rounded-lg min-h-[656px] overflow-hidden">
+    <div className="shadow-lg rounded-lg min-h-[656px] overflow-hidden animate-pulse">
       {/* image */}
       <div className="w-full h-72 bg-neutral-200"></div>
       <div className="p-7 flex-1 flex flex-col justify-between">

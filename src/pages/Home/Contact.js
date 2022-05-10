@@ -3,8 +3,8 @@ import React from "react";
 const Contact = () => {
   return (
     <section>
-      <div className="container mx-auto px-20 my-20">
-        <h2 className="mb-16 text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[20%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50">
+      <div className="container mx-auto px-5 lg:px-20 my-20">
+        <h2 className="text-4xl lg:text-5xl mb-16 text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[20%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50">
           Contact
         </h2>
         <div className="max-w-xl mx-auto">

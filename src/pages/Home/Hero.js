@@ -5,13 +5,12 @@ import VegetableImage from "../../images/basket-full-vegetables.jpeg";
 const Hero = () => {
   return (
     <section className="w-full">
-      <div className="container px-20 mx-auto py-10 flex items-center">
-        <div className="w-1/2">
-          <h1 className="text-8xl font-semibold font-['Playfair_Display'] text-neutral-600">
-            Fresh & <br />
-            Organic
+      <div className="container px-5 lg:px-20 mx-auto py-10 flex flex-col lg:flex-row items-center">
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
+          <h1 className="text-7xl lg:text-8xl font-semibold font-['Playfair_Display'] text-neutral-600 text-center lg:text-left">
+            Fresh & Organic
           </h1>
-          <p className="my-5 text-xl text-neutral-500 leading-9">
+          <p className="my-5 text-center lg:text-left text-xl text-neutral-500 leading-9">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
             delectus corporis ex nihil nostrum! Repellendus at accusamus sequi
             necessitatibus officia!
@@ -23,7 +22,7 @@ const Hero = () => {
             View All
           </Link>
         </div>
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <img
             className="w-full h-full object-contain"
             src={VegetableImage}

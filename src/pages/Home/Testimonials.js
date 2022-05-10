@@ -13,13 +13,26 @@ const Testimonials = () => {
 
   return (
     <section className="w-full my-10 py-10 bg-neutral-50">
-      <div className="container mx-auto px-20">
-        <h2 className="mb-10 text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[30%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50">
+      <div className="container mx-auto px-5 lg:px-20">
+        <h2 className="mb-10 text-4xl lg:text-5xl text-center font-semibold text-neutral-600 font-['Playfair_Display'] relative after:content-[''] after:absolute after:w-[30%] after:h-[5px] after:-bottom-7 after:left-1/2 after:-translate-x-1/2 after:bg-green-600/50">
           Testimonials
         </h2>
         <Swiper
           spaceBetween={50}
           slidesPerView={3}
+          breakpoints={{
+            // when window width is >= 640px
+            0: {
+              slidesPerView: 1,
+            },
+            // when window width is >= 768px
+            1024: {
+              slidesPerView: 2,
+            },
+            1280: {
+              slidesPerView: 3,
+            },
+          }}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
