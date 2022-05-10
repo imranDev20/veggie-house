@@ -22,9 +22,8 @@ const Login = () => {
 
   // Hooks
   const scaleLoaderCss = useLoadingAnimation();
-  const [sendPasswordResetEmail, sending, resetError] =
-    useSendPasswordResetEmail(auth);
-  const [user, loading, error] = useAuthState(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+  const [user] = useAuthState(auth);
 
   const [signInWithEmailAndPassword, createdUser, signInloading, signInError] =
     useSignInWithEmailAndPassword(auth);
@@ -32,6 +31,7 @@ const Login = () => {
   // Custom Hooks
   const { handleEmailChange, email, isValidEmail, emailMessage } =
     useEmailValidate();
+
   const { from, navigate } = useFromRedirect();
 
   // Functions

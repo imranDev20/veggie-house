@@ -27,14 +27,18 @@ const Inventory = ({ isHome }) => {
 
         <div className="mt-20 mb-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
           {/* add new button */}
-          <div className="shadow-lg rounded-lg overflow-hidden bg-white flex flex-col justify-center items-center min-h-[608px]">
-            <Link to="/inventory/add-new-item">
-              <div className="flex flex-col justify-center items-center rounded-full w-60 h-60 bg-neutral-100 p-10 overflow-hidden ]">
-                <span className="text-4xl text-neutral-600">+</span>
-                <span className="text-neutral-600 text-2xl">Add New Item</span>
-              </div>
-            </Link>
-          </div>
+          {!isHome && (
+            <div className="shadow-lg rounded-lg overflow-hidden bg-white flex flex-col justify-center items-center min-h-[608px]">
+              <Link to="/inventory/add-new-item">
+                <div className="flex flex-col justify-center items-center rounded-full w-60 h-60 bg-neutral-100 p-10 overflow-hidden ]">
+                  <span className="text-4xl text-neutral-600">+</span>
+                  <span className="text-neutral-600 text-2xl">
+                    Add New Item
+                  </span>
+                </div>
+              </Link>
+            </div>
+          )}
           {isHome
             ? inventory.length !== 0
               ? inventory

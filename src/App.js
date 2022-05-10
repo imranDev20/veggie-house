@@ -16,15 +16,18 @@ import RequireAuth from "./pages/RequireAuth/RequireAuth";
 import Blog from "./pages/Blog/Blog";
 import MyItems from "./pages/MyItems/MyItems";
 import AddTestimonial from "./pages/AddTestimonial/AddTestimonial";
+import About from "./pages/About/About";
 
 function App() {
   return (
     <div className="App">
       <ScrollToTop />
       <Header />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/inventory" element={<Inventory />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/add-testimonial"
           element={

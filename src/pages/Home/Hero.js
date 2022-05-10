@@ -11,9 +11,10 @@ const Hero = () => {
             Fresh & Organic
           </h1>
           <p className="my-5 text-center lg:text-left text-xl text-neutral-500 leading-9">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-            delectus corporis ex nihil nostrum! Repellendus at accusamus sequi
-            necessitatibus officia!
+            Veggie house is a warehouse which can be defined functionally as a
+            building in which to store bulk produce or goods (wares) for
+            commercial purposes. The built form of warehouse structures
+            throughout time depends on many contexts.
           </p>
           <Link
             className="px-5 py-3 text-orange-500 font-semibold rounded bg-orange-500/20 hover:bg-orange-500 hover:text-white transition-colors inline-block"

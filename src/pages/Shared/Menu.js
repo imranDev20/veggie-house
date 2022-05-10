@@ -17,6 +17,8 @@ const Menu = () => {
     <nav className="hidden lg:flex items-center">
       <CustomLink to="/">Home</CustomLink>
       <CustomLink to="/inventory">Inventory</CustomLink>
+      <CustomLink to="/about">About</CustomLink>
+
       <CustomLink to="/blog">Blog</CustomLink>
 
       {user && (

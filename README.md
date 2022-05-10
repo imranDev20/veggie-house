@@ -15,4 +15,5 @@ Veggie house is a warehouse management website. The main focus of this website i
 - Added Blogs Questions
 - Added functionality to add user accounts, add new items and manage their items
 - Installed toast and shown toast
+- Added authentication and live error reporting on login and signup page
 - Used tailwind and react-firebase-hooks

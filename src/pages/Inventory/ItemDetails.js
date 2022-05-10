@@ -63,15 +63,15 @@ const ItemDetails = () => {
     <main className="min-h-[600px]">
       {item._id ? (
         <>
-          <div className="max-w-4xl mx-auto px-20 flex my-10">
-            <div className="w-1/2 border rounded overflow-hidden">
+          <div className="max-w-4xl mx-auto px-5 lg:px-20 flex flex-col lg:flex-row my-10">
+            <div className="w-full lg:w-1/2 border rounded overflow-hidden">
               <img
                 className="w-full h-full object-contain"
                 src={item.image}
                 alt=""
               />
             </div>
-            <div className="w-1/2 p-5">
+            <div className="w-full lg:w-1/2 p-5">
               <h2 className="text-4xl text-neutral-600 font-['Playfair_Display'] font-semibold">
                 {item.name}
               </h2>
