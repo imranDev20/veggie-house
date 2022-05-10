@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 
 const useInventory = () => {
   const [inventory, setInventory] = useState([]);
