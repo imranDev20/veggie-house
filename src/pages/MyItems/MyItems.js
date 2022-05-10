@@ -12,12 +12,12 @@ const MyItems = () => {
 
   const email = user?.email;
   useEffect(() => {
-    const url = `${process.env.REACT_APP_SERVER_URL}/inventory?email=${email}`;
+    const url = `${process.env.REACT_APP_SERVER_URL}/inventory/filter?email=${email}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyItems(data));
-  }, [email]);
+  }, [user]);
 
   return (
     <main className="container mx-auto px-20 my-10">

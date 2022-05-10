@@ -5,6 +5,7 @@ import ScaleLoader from "react-spinners/ScaleLoader";
 const ItemDetails = () => {
   const { itemId } = useParams();
   const [item, setItem] = useState({});
+  const [restockCount, setRestockCount] = useState(0);
 
   console.log(item._id);
 
@@ -13,6 +14,50 @@ const ItemDetails = () => {
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
+
+  // Delivered , minus quantity by 1
+  const handleDelivered = () => {
+    const quantity = parseInt(item?.quantity);
+
+    const newQuantity = quantity - 1;
+    console.log(newQuantity);
+    const updatedItem = { quantity: newQuantity };
+
+    console.log(updatedItem);
+
+    fetch(`${process.env.REACT_APP_SERVER_URL}/inventory/${itemId}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("success", data);
+        alert("item delivered");
+      });
+  };
+
+  const handleRestock = () => {
+    const quantity = parseInt(item?.quantity);
+
+    const newQuantity = quantity + parseInt(restockCount);
+    const updatedItem = { quantity: newQuantity };
+
+    fetch(`${process.env.REACT_APP_SERVER_URL}/inventory/${itemId}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("success", data);
+        alert("Item updated");
+      });
+  };
 
   return (
     <main className="min-h-[600px]">
@@ -51,15 +96,23 @@ const ItemDetails = () => {
 
               <div className="flex items-center">
                 <input
+                  onChange={(e) => setRestockCount(e.target.value)}
                   className="bg-neutral-100 outline-none focus:ring-2 focus:ring-green-600/30 rounded-l px-3 py-2"
                   type="number"
+                  name="stockfield"
                   min={0}
                 />
-                <button className="bg-green-600/30 text-green-600 px-3 py-2 rounded-r font-semibold">
+                <button
+                  onClick={() => handleRestock()}
+                  className="bg-green-600/30 text-green-600 px-3 py-2 rounded-r font-semibold"
+                >
                   Restock
                 </button>
               </div>
-              <button className="my-3 bg-orange-600/30 text-orange-600 rounded px-3 py-2 font-semibold">
+              <button
+                onClick={() => handleDelivered()}
+                className="my-3 bg-orange-600/30 text-orange-600 rounded px-3 py-2 font-semibold"
+              >
                 Delivered
               </button>
             </div>

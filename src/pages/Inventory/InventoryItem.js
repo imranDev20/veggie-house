@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BsTrash } from "react-icons/bs";
 import useInventory from "../../hooks/useInventory";
+import { useNavigate } from "react-router-dom";
 
 const InventoryItem = ({
   id,
@@ -14,9 +15,11 @@ const InventoryItem = ({
   description,
 }) => {
   const { inventory, setInventory } = useInventory();
+  let navigate = useNavigate();
 
   const handleDeleteItem = () => {
     const proceed = window.confirm("Are you sure you wnt to delete");
+
     if (proceed) {
       const url = `${process.env.REACT_APP_SERVER_URL}/inventory/${id}`;
 
@@ -26,8 +29,10 @@ const InventoryItem = ({
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          const remaining = inventory.filter((item) => item._id !== id);
-          setInventory(remaining);
+          if (data.deletedCount > 0) {
+            const remaining = inventory.filter((item) => item._id !== id);
+            setInventory(remaining);
+          }
         });
     }
   };
