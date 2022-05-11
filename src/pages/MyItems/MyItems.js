@@ -1,22 +1,39 @@
 import React, { useEffect, useState } from "react";
 import app from "../../firebase";
-import { getAuth } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import MyItem from "./MyItem";
 import Skeleton from "../Shared/Skeleton";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const auth = getAuth(app);
 
 const MyItems = () => {
   const [myItems, setMyItems] = useState([]);
   const [user, loading, error] = useAuthState(auth);
 
-  const email = user?.email;
+  const navigate = useNavigate();
+
   useEffect(() => {
-    const url = `${process.env.REACT_APP_SERVER_URL}/inventory/filter?email=${email}`;
-    console.log(url);
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setMyItems(data));
+    const getMyItems = async () => {
+      const email = user?.email;
+      const url = `${process.env.REACT_APP_SERVER_URL}/inventory/filter?email=${email}`;
+      try {
+        const { data } = await axios.get(url, {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        });
+        setMyItems(data);
+      } catch (error) {
+        console.log(error.message);
+        if (error.response.status === 401 || error.response.status === 403) {
+          signOut(auth);
+          navigate("/login");
+        }
+      }
+    };
+    getMyItems();
   }, [user]);
 
   return (

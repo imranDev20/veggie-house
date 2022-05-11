@@ -13,6 +13,7 @@ import useLoadingAnimation from "../../hooks/useLoadingAnimation";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import useEmailValidate from "../../hooks/useEmailValidate";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const auth = getAuth(app);
 
@@ -35,11 +36,19 @@ const Login = () => {
   const { from, navigate } = useFromRedirect();
 
   // Functions
-  const handleSignIn = () => {
-    signInWithEmailAndPassword(email, password);
+  const handleSignIn = async () => {
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post(
+      `${process.env.REACT_APP_SERVER_URL}/login`,
+      { email }
+    );
+    localStorage.setItem("accessToken", data.accessToken);
+    if (!signInError) {
+      navigate(from, { replace: true });
+    }
   };
 
-  user && navigate("/");
+  // user && navigate("/");
 
   return (
     <div className="container mx-auto px-10 my-10  ">

@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import { MdInventory, MdPlusOne } from "react-icons/md";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+import { BsCollectionFill } from "react-icons/bs";
+import { FiLogOut } from "react-icons/fi";
+import AvatarImage from "../../images/avatar-default.png";
 
 const auth = getAuth(app);
 
@@ -19,32 +24,45 @@ const Sidebar = ({ open, setOpen }) => {
       {user?.email ? (
         <>
           <div className="w-28 h-28 rounded-full overflow-hidden">
-            <img
-              className="w-full h-full object-cover"
-              src={user?.photoURL}
-              alt=""
-            />
+            {user?.photoURL ? (
+              <img
+                className="w-full h-full object-cover"
+                src={user?.photoURL}
+                alt=""
+              />
+            ) : (
+              <img src={AvatarImage} alt="" />
+            )}
           </div>
           <h5 className="text-2xl my-2 font-semibold text-neutral-600">
             {user?.displayName}
           </h5>
-          <Link className="text-neutral-500 my-2" to="/inventory">
-            Manage Items
+          <Link
+            className="text-neutral-500 my-2 flex items-center"
+            to="/inventory"
+          >
+            <MdInventory className="mr-2" /> Manage Items
           </Link>
-          <Link className="text-neutral-500 my-2" to="/inventory/add-new-item">
-            Add Item
+          <Link
+            className="text-neutral-500 my-2 flex items-center"
+            to="/inventory/add-new-item"
+          >
+            <AiOutlinePlusCircle className="mr-2" /> Add Item
           </Link>
-          <Link className="text-neutral-500 my-2" to="/my-items">
-            My Items
+          <Link
+            className="text-neutral-500 my-2 flex items-center"
+            to="/my-items"
+          >
+            <BsCollectionFill className="mr-2" /> My Items
           </Link>
           <div
-            className="cursor-pointer text-neutral-500"
+            className="cursor-pointer text-neutral-500 flex items-center"
             onClick={() => {
               signOut(auth);
               toast("User logout successfull.");
             }}
           >
-            Logout
+            <FiLogOut className="mr-2" /> Logout
           </div>
         </>
       ) : (
