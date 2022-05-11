@@ -76,7 +76,7 @@ const ItemDetails = () => {
                 {item.name}
               </h2>
               <p className="text-3xl my-3 text-green-600 font-medium">
-                {item.price}
+                ৳{item.price}
               </p>
               <p className="text-neutral-500 my-5">{item.description}</p>
               <div className="my-5">
